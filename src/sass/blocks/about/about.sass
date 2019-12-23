@@ -1,0 +1,44 @@
+.about
+  z-index: 1
+  background-color: #FFF5F5
+  .section-title
+    +sm-block
+      margin-bottom: 1rem
+
+.about-list
+  &__item
+    display: flex
+    align-items: center
+    padding: 4.5rem 2rem
+    border-bottom: 0.2rem solid #FFE6E5
+    +trans
+    +sm-block
+      margin-right: -15px
+      margin-left: -15px
+      padding: 3rem 15px
+    &:hover
+      background-color: #FFE6E6
+  &__icon
+    flex-shrink: 0
+    width: 7rem
+    margin-right: 3.5rem
+    text-align: center
+    +md-block
+      width: 4rem
+      margin-right: 2rem
+    +sm-block
+      width: 3.5rem
+  &__title
+    position: relative
+    margin: 0
+    +sm-block
+      flex-grow: 1
+      padding-right: 8rem
+  .btn-play
+    position: absolute
+    top: 50%
+    left: calc(100% + 5.5rem)
+    transform: translateY(-50%)
+    +sm-block
+      left: auto
+      right: 1rem

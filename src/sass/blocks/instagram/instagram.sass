@@ -1,0 +1,83 @@
+.instagram
+  background: $main-color url(images/general/insta-bg.jpg) no-repeat center top / cover
+  color: #fff
+  +from(993px)
+    padding-top: 21rem
+    padding-bottom: 20rem
+  +sm-block
+    padding-bottom: 4rem
+  .section-descr
+    +sm-block
+      font-size: 1.2rem
+      br
+        display: none
+  &__left
+    +col
+    +size(7)
+    +size-md(14)
+    padding-left: 7rem
+    +md-block
+      padding-left: 0
+    +sm-block
+      text-align: center
+    .instagram
+      &__link
+        margin-top: 7px
+        +sm-block
+          display: none
+  &__right
+    +col
+    +size(7)
+    +size-md(14)
+  .row
+    align-items: center
+  &__icon
+    margin-bottom: 4rem
+    +sm-block
+      width: 3rem
+      margin-bottom: 1rem
+  &__link
+    position: relative
+    padding-left: 4rem
+    font-family: $second-font
+    font-size: 2.4rem
+    font-weight: 600
+    color: #fff
+    text-decoration: underline
+    +sm-block
+      padding-left: 3rem
+      font-size: 1.6rem
+    &::before
+      content: ''
+      position: absolute
+      top: 2px
+      left: 0
+      width: 2.4rem
+      height: 2.4rem
+      background: url(images/general/instagram.svg) no-repeat center / contain
+      +sm-block
+        width: 1.7rem
+        height: 1.7rem
+    &-bottom
+      display: none
+      margin-top: 2rem
+      +sm-block
+        display: inline-block
+
+.instagram-photos
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-gap: 2rem
+  padding-right: 5rem
+  +lg-block
+    padding-right: 0
+  +md-block
+    max-width: 62rem
+    margin: 0 auto
+  +sm-block
+    grid-gap: 1rem
+    max-width: 26rem
+  img
+    &:first-child
+      transform: scale(1.23)
+      box-shadow: 0px 4px 30px rgba(30, 30, 30, 0.7)

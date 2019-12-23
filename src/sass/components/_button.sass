@@ -1,0 +1,155 @@
+button
+  padding: 0
+  cursor: pointer
+
+.btn
+  display: inline-block
+  vertical-align: middle
+  padding: 10px 15px
+  font-family: $main-font
+  font-size: 16px
+  font-weight: 700
+  color: #fff
+  text-align: center
+  background-color: $accent
+  border: 0
+  outline: none
+  text-decoration: none
+  cursor: pointer
+  user-select: none
+  transition: all .25s ease
+  text-transform: uppercase
+  &:hover
+    background-color: lighten($accent, 5%)
+    color: #fff
+  &:focus
+    background-color: darken($accent, 5%)
+    color: #fff
+    outline: none
+  &[disabled]
+    background-color: #e5e5e5
+    cursor: not-allowed
+    color: #fff
+
+.btn-down
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 8rem
+  height: 8rem
+  border: 0.2rem solid rgba(#fff, 0.1)
+  background: none
+  border-radius: 50%
+  +trans
+  +md-block
+    width: 5rem
+    height: 5rem
+  +sm-block
+    width: 2.3rem
+    height: 2.3rem
+  &:hover
+    border-color: rgba(#fff, 0.8)
+    svg
+      fill: rgba(#fff, 0.8)
+  svg
+    width: 1.4rem
+    height: 3.2rem
+    fill: rgba(#fff, 0.15)
+    +trans
+    +md-block
+      width: 1rem
+      height: 2.4rem
+    +sm-block
+      width: 0.7rem
+      height: 1rem
+
+.btn-play
+  position: relative
+  display: block
+  width: 4.8rem
+  height: 4.8rem
+  border-radius: 50%
+  background: linear-gradient(260.92deg, #FC8D03 0%, #FD4505 99.87%)
+  box-shadow: 0 10px 20px rgba(253, 69, 5, 0.5)
+  opacity: 0.5
+  +sm-block
+    width: 3rem
+    height: 3rem
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 20rem
+    height: 20rem
+    margin-top: -10rem
+    margin-left: -10rem
+    background: url(images/general/play-video-text.svg) no-repeat center / contain
+    opacity: 0
+    animation: spin 10s linear infinite
+    +trans
+    +sm-block
+      display: none
+  &.btn-hover, &:hover
+    opacity: 1
+    +from(768px)
+      width: 9.6rem
+      height: 9.6rem
+      &::before
+        opacity: 1
+      span
+        &::before, &:after
+          opacity: 0
+      svg
+        width: 3.2rem
+        height: 3.6rem
+  span
+    position: relative
+    z-index: 2
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    height: 100%
+    &::before
+      content: ''
+      position: absolute
+      top: -0.75rem
+      right: -0.75rem
+      bottom: -0.75rem
+      left: -0.75rem
+      background-color: $orange
+      opacity: 0.1
+      z-index: -1
+      border-radius: 50%
+      +trans
+      +sm-block
+        top: -0.5rem
+        right: -0.5rem
+        bottom: -0.5rem
+        left: -0.5rem
+    &::after
+      content: ''
+      position: absolute
+      top: -1.6rem
+      right: -1.6rem
+      bottom: -1.6rem
+      left: -1.6rem
+      z-index: -2
+      background-color: $orange
+      opacity: 0.1
+      border-radius: 50%
+      +trans
+      +sm-block
+        top: -1rem
+        right: -1rem
+        bottom: -1rem
+        left: -1rem
+  svg
+    width: 1.6rem
+    height: 1.8rem
+    fill: #fff
+    +trans
+    +sm-block
+      width: 1.2em
+      height: 1.4rem

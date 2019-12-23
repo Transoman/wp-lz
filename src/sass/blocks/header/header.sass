@@ -1,0 +1,35 @@
+.header
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  z-index: 10
+  padding: 3rem 0
+  +trans
+  +md-block
+    padding: 1.5rem 0
+    +sm-block
+      padding: 1rem 0
+  &.nav-open
+    background-color: $main-color
+  &--inner
+    position: static
+    background-color: $main-color
+  .container
+    position: relative
+    display: flex
+    align-items: center
+  &__logo
+    +md-block
+      max-width: 20rem
+    +sm-block
+      max-width: 12rem
+  &__nav
+    margin-left: auto
+    margin-right: 13rem
+    opacity: 0
+    visibility: hidden
+    +trans
+    &.open
+      opacity: 1
+      visibility: visible

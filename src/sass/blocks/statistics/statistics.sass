@@ -1,0 +1,90 @@
+.statistics
+  background-color: $main-color
+  color: #fff
+  .container
+    position: relative
+    z-index: 1
+  &__left
+    +col
+    +size(6)
+    +size-md(14)
+    +md-block
+      margin-bottom: 5rem
+  &__right
+    +col
+    +size(6)
+    +size-md(14)
+    +shift-left(1)
+    +md-block
+      margin-left: 15px
+  &__title
+    min-height: 13.5rem
+    margin-bottom: 5.5rem
+    font-size: 4rem
+    +xl-block
+      font-size: 3.4rem
+    +lg-block
+      min-height: 8.5rem
+      font-size: 2.7rem
+    +md-block
+      min-height: auto
+      margin-bottom: 3rem
+    +sm-block
+      margin-bottom: 1rem
+      font-size: 2.4rem
+    span
+      color: $accent
+  &__graph
+    +md-block
+      width: 100%
+  &__graph-descr
+    margin-top: 3rem
+    margin-bottom: 0
+    font-size: 1.4rem
+    line-height: 2
+    +sm-block
+      font-size: 1.2rem
+  &__bottom
+    display: flex
+    align-items: center
+    margin-top: 5.5rem
+    padding-top: 7.5rem
+    border-top: 1px solid #5A5A5A
+    +sm-block
+      margin-top: 5rem
+      border: 0
+      padding-top: 0
+      flex-direction: column
+      text-align: center
+    img
+      flex-shrink: 0
+      margin-right: 7.5rem
+      +md-block
+        width: 12rem
+        margin-right: 4rem
+      +sm-block
+        width: 10rem
+        margin-right: 0
+        margin-bottom: 1rem
+    &-title
+      margin-bottom: 1rem
+      font-size: 4.8rem
+      color: $accent
+      +lg-block
+        font-size: 4.2rem
+      +sm-block
+        font-size: 2.4rem
+    &-descr
+      margin: 0
+      font-family: $second-font
+      font-size: 3rem
+      font-weight: 600
+      line-height: 1.2
+      +lg-block
+        font-size: 2.6rem
+      +md-block
+        font-size: 2rem
+      +sm-block
+        font-size: 1.8rem
+        br
+          display: none

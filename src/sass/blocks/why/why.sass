@@ -1,0 +1,132 @@
+.why
+  z-index: 1
+  +from(768px)
+    padding-bottom: 13rem
+  .section-title
+    margin-bottom: 6rem
+    +sm-block
+      margin-bottom: 3rem
+
+.why-list
+  position: relative
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    top: -8.5rem
+    left: -13rem
+    z-index: -1
+    width: 21rem
+    height: 20rem
+    background: url(images/general/star.svg) no-repeat center/ contain
+    +sm-block
+      left: -7rem
+      opacity: 0.09
+  &__item
+    +col
+    +size(7)
+    +size-md(14)
+    +size-sm(14)
+    position: relative
+    z-index: 1
+    margin-bottom: 3rem
+    padding: 4rem 5rem 3.5rem
+    border-radius: 1.5rem
+    background-color: #F0FFF2
+    +trans
+    +sm-block
+      padding: 1.8rem
+    &::after
+      content: ''
+      position: absolute
+      bottom: 2rem
+      right: 2rem
+      z-index: -1
+      width: 12rem
+      height: 12rem
+      background: url(images/general/check.svg) no-repeat center / contain
+      opacity: 0.2
+      +sm-block
+        right: 0.8rem
+        bottom: 2rem
+        width: 10rem
+        height: 10rem
+        opacity: 0.1
+    &:hover
+      box-shadow: 0 0 30px rgba(30, 30, 30, 0.15)
+      .btn-play.btn-hover
+        opacity: 1
+        visibility: visible
+    &--minus
+      background-color: #FFF5F5
+      &::after
+        background-image: url(images/general/remove.svg)
+        opacity: 0.1
+        +sm-block
+          opacity: 0.05
+      .why-list
+        &__title
+          &::before
+            background-image: url(images/general/remove.svg)
+    &--video-play
+      .why-list
+        &__content
+          max-width: 32rem
+    p
+      margin-bottom: 1rem
+      color: rgba($main-color, 0.8)
+      &:last-child
+        margin-bottom: 0
+    .btn-play.btn-hover
+      position: absolute
+      bottom: 5.5rem
+      right: 5.5rem
+      z-index: 1
+      width: 7rem
+      height: 7rem
+      opacity: 0
+      visibility: hidden
+      +sm-block
+        right: 3.5rem
+        bottom: 3.5rem
+        width: 4.7rem
+        height: 4.7rem
+      &::before
+        width: 15rem
+        height: 15rem
+        margin-top: -7.5rem
+        margin-left: -7.5rem
+        +sm-block
+          display: block
+          width: 10rem
+          height: 10rem
+          margin-top: -5rem
+          margin-left: -5rem
+          opacity: 1
+      svg
+        width: 2.4rem
+        height: 2.7rem
+        +sm-block
+          width: 1.6rem
+          height: 1.8rem
+      span
+        &::before, &::after
+          opacity: 0
+  &__title
+    position: relative
+    margin-bottom: 2rem
+    padding-left: 4rem
+    font-size: 2.4rem
+    +sm-block
+      font-size: 1.8rem
+    &::before
+      content: ''
+      position: absolute
+      top: -0.1rem
+      left: 0
+      width: 2.6rem
+      height: 2.6rem
+      background: url(images/general/check.svg) no-repeat center / contain
+      +sm-block
+        width: 2rem
+        height: 2rem

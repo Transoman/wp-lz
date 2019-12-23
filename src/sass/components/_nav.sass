@@ -1,0 +1,133 @@
+.nav
+  +lg-block
+    position: fixed
+    top: 0
+    right: 0
+    height: 100%
+    width: 32rem
+    margin: 0
+    padding: 12rem 3rem 4rem
+    background-color: $main-color
+    overflow-y: auto
+    +smooth-scroll
+    +trans
+    +md-block
+      padding-top: 7rem
+
+.nav-list
+  margin: 0
+  padding: 0
+  list-style: none
+  display: flex
+  align-items: center
+  +lg-block
+    flex-direction: column
+    align-items: flex-start
+  li
+    margin-right: 4.5rem
+    +lg-block
+      margin-right: 0
+      margin-bottom: 2rem
+    &:last-child
+      margin-right: 0
+      +lg-block
+        margin-bottom: 0
+  a
+    position: relative
+    font-family: $second-font
+    font-size: 2.4rem
+    font-weight: 600
+    color: #fff
+    line-height: 1
+    &::after
+      content: ''
+      position: absolute
+      bottom: 0
+      right: 0
+      width: 0
+      height: 0.3rem
+      background-color: $accent
+      +trans
+    &:hover, &:focus
+      color: #fff
+      &::after
+        width: 100%
+        left: 0
+        right: auto
+
+.nav-toggle
+  position: absolute
+  right: 15px
+  top: 50%
+  transform: translateY(-50%)
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 8rem
+  height: 8rem
+  padding: 0
+  margin: 0
+  outline: none
+  border: 2px solid rgba(#fff, 0.5)
+  border-radius: 50%
+  background: none
+  z-index: 1
+  cursor: pointer
+  +trans(border)
+  +md-block
+    width: 2.5rem
+    height: 2.5rem
+    border-width: 0.1rem
+  &:hover
+    border-color: rgba(#fff, 0.8)
+    .nav-toggle
+      &__line
+        background-color: rgba(#fff, 0.8)
+        &::before, &:after
+          background-color: rgba(#fff, 0.8)
+  &:focus
+    outline: none
+  &__line
+    position: relative
+    display: block
+    height: 0.2rem
+    width: 40%
+    background-color: rgba(#fff, 0.5)
+    +trans
+    +md-block
+      height: 0.1rem
+    &::after, &::before
+      content: ''
+      position: absolute
+      left: 0
+      display: block
+      height: 0.2rem
+      width: 100%
+      background-color: rgba(#fff, 0.5)
+      +trans
+      +md-block
+        height: 0.1rem
+    &::before
+      top: -6px
+      +md-block
+        top: -4px
+    &::after
+      top: 6px
+      +md-block
+        top: 4px
+  &.active
+    +lg-block
+      position: fixed
+      top: 1.5rem
+      right: 2rem
+      transform: none
+    +xs-block
+      right: 1.5rem
+    .nav-toggle__line
+      background: transparent
+      &::after
+        top: 0
+        transform: rotate(45deg)
+      &::before
+        top: 0
+        transform: rotate(-45deg)

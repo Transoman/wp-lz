@@ -1,0 +1,53 @@
+.faq
+  .container
+    position: relative
+    z-index: 1
+  .section-title
+    margin-bottom: 6rem
+    +sm-block
+      margin-bottom: 2rem
+
+.faq-list
+  &__item
+    +col
+    +size(7)
+    +size-md(14)
+    position: relative
+    display: flex
+    align-items: center
+    min-height: 13rem
+    margin-bottom: 3rem
+    padding: 3rem 10rem 3rem 4rem
+    background-color: #F5F5F5
+    border-radius: 1.5rem
+    +trans
+    +sm-block
+      min-height: 9rem
+      margin-bottom: 2rem
+      padding: 2rem 9rem 2rem 2rem
+      &:last-child
+        margin-bottom: 0
+    &:hover
+      background: #fff
+      box-shadow: 0 0 30px rgba(30, 30, 30, 0.15)
+    .btn-play
+      position: absolute
+      right: 3.5rem
+      top: 50%
+      transform: translateY(-50%)
+      z-index: 1
+      +sm-block
+        right: 3rem
+      &::before
+        width: 15rem
+        height: 15rem
+        margin-top: -7.5rem
+        margin-left: -7.5rem
+      &.btn-hover
+        +from(768px)
+          width: 7.2rem
+          height: 7.2rem
+  &__title
+    margin: 0
+    +sm-block
+      font-size: 1.8rem
