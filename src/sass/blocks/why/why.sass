@@ -71,7 +71,8 @@
     &--video-play
       .why-list
         &__content
-          max-width: 32rem
+          +from(768px)
+            max-width: 32rem
     p
       margin-bottom: 1rem
       color: rgba($main-color, 0.8)
@@ -81,7 +82,7 @@
       position: absolute
       bottom: 5.5rem
       right: 5.5rem
-      z-index: 1
+      z-index: 2
       width: 7rem
       height: 7rem
       opacity: 0
@@ -91,6 +92,8 @@
         bottom: 3.5rem
         width: 4.7rem
         height: 4.7rem
+        opacity: 1
+        visibility: visible
       &::before
         width: 15rem
         height: 15rem
@@ -112,6 +115,15 @@
       span
         &::before, &::after
           opacity: 0
+      &.active
+        right: 23rem
+        opacity: 1
+        visibility: visible
+        +sm-block
+          right: 30vw
+  &__content
+    +sm-block
+      max-width: 19rem
   &__title
     position: relative
     margin-bottom: 2rem

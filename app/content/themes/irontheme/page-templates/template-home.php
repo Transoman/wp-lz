@@ -59,9 +59,20 @@ if ( have_rows('home_layout') ):
 
                     <?php $video = get_sub_field( 'video' );
                     if ($video): ?>
-                      <a href="#" class="btn-play"><span><?php ith_the_icon( 'icon-play' ); ?></span></a>
+                      <a href="#" class="btn-play"><span>
+                          <?php ith_the_icon( 'icon-play', 'btn-play__play' ); ?>
+                          <?php ith_the_icon( 'icon-pause', 'btn-play__pause' ); ?>
+                        </span></a>
                     <?php endif; ?>
                   </h3>
+
+                  <?php if ($video): ?>
+                    <div class="float-video about-list__video">
+                      <video>
+                        <source src="<?php echo $video; ?>" type="video/mp4">
+                      </video>
+                    </div>
+                  <?php endif; ?>
                 </div>
               <?php endwhile; ?>
             </div>
@@ -93,7 +104,16 @@ if ( have_rows('home_layout') ):
 
                     <?php $video = get_sub_field( 'video' );
                     if ($video): ?>
-                      <a href="#" class="btn-play btn-hover"><span><?php ith_the_icon( 'icon-play' ); ?></span></a>
+                      <a href="#" class="btn-play btn-hover"><span>
+                          <?php ith_the_icon( 'icon-play', 'btn-play__play' ); ?>
+                          <?php ith_the_icon( 'icon-pause', 'btn-play__pause' ); ?>
+                        </span></a>
+
+                      <div class="float-video why-list__video">
+                        <video>
+                          <source src="<?php echo $video; ?>" type="video/mp4">
+                        </video>
+                      </div>
                     <?php endif; ?>
 
                   </div>
@@ -164,7 +184,16 @@ if ( have_rows('home_layout') ):
 
                   <?php $video = get_sub_field( 'video' );
                   if ($video): ?>
-                    <a href="#" class="btn-play"><span><?php ith_the_icon( 'icon-play' ); ?></span></a>
+                    <a href="#" class="btn-play"><span>
+                        <?php ith_the_icon( 'icon-play', 'btn-play__play' ); ?>
+                        <?php ith_the_icon( 'icon-pause', 'btn-play__pause' ); ?>
+                      </span></a>
+
+                    <div class="float-video faq-list__video">
+                      <video>
+                        <source src="<?php echo $video; ?>" type="video/mp4">
+                      </video>
+                    </div>
                   <?php endif; ?>
 
                 </div>

@@ -196,9 +196,9 @@
                                 },
                                 {
                                     "key": "field_5dfcb6be50fa4",
-                                    "label": "Ссылка на видео",
+                                    "label": "Видео",
                                     "name": "video",
-                                    "type": "link",
+                                    "type": "file",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -207,7 +207,11 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "url"
+                                    "return_format": "url",
+                                    "library": "all",
+                                    "min_size": "",
+                                    "max_size": "",
+                                    "mime_types": "mp4"
                                 }
                             ]
                         }
@@ -299,7 +303,7 @@
                                 },
                                 {
                                     "key": "field_5dfcb75750fac",
-                                    "label": "Ссылка на видео",
+                                    "label": "Видео",
                                     "name": "video_clon",
                                     "type": "clone",
                                     "instructions": "",
@@ -604,7 +608,7 @@
                                 },
                                 {
                                     "key": "field_5dfdec4469964",
-                                    "label": "Ссылка на вмдео",
+                                    "label": "Видео",
                                     "name": "video_clone",
                                     "type": "clone",
                                     "instructions": "",
@@ -1071,5 +1075,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1577086811
+    "modified": 1577095878
 }

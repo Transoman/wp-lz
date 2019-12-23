@@ -35,7 +35,6 @@
       right: 3.5rem
       top: 50%
       transform: translateY(-50%)
-      z-index: 1
       +sm-block
         right: 3rem
       &::before
@@ -43,6 +42,10 @@
         height: 15rem
         margin-top: -7.5rem
         margin-left: -7.5rem
+      &.active
+        right: 25rem
+        +sm-block
+          right: 28vw
       &.btn-hover
         +from(768px)
           width: 7.2rem
