@@ -243,23 +243,10 @@ if ( have_rows('home_layout') ):
                     <div class="price-list__row price-list__row--price" data-title="Базовая стоимость"><?php echo get_sub_field( 'base_price' ) ?: '—'; ?></div>
                     <div class="price-list__row" data-title="Ежегодный взнос"><?php echo get_sub_field( 'fee' ) ?: '—'; ?></div>
                     <div class="price-list__row" data-title="Питание четырехразовое"><?php echo get_sub_field( 'meals' ) ?: '—'; ?></div>
-                    <div class="price-list__row" data-title="Скидка семьям с 2-мя и более детьми, обучающимися в школе, на обучение 2-го и оследующих детей"><?php echo get_sub_field( 'discount' ) ?: '—'; ?></div>
+                    <div class="price-list__row" data-title="Скидка семьям с 2-мя и более детьми"><?php echo get_sub_field( 'discount' ) ?: '—'; ?></div>
                   </div>
                 </div>
               <?php endwhile; ?>
-            </div>
-          <?php endif; ?>
-
-          <?php $note = get_sub_field( 'note' );
-
-          if ($note): ?>
-            <div class="price__note">
-              <div class="price__note-icon">
-                <?php ith_the_icon( 'icon-8' ); ?>
-              </div>
-              <div class="price__note-text">
-                <?php echo $note; ?>
-              </div>
             </div>
           <?php endif; ?>
         </div>
