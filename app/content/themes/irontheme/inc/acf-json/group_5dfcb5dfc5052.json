@@ -80,13 +80,46 @@
                             "new_lines": "br"
                         },
                         {
+                            "key": "field_5e048496e9ada",
+                            "label": "Тип фона",
+                            "name": "type_bg",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "img": "Изображение",
+                                "video": "Видео"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
                             "key": "field_5dfcb7ecfc661",
                             "label": "Фоновое изображение",
                             "name": "bg",
                             "type": "image",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5e048496e9ada",
+                                        "operator": "==",
+                                        "value": "img"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -102,6 +135,33 @@
                             "max_height": "",
                             "max_size": "",
                             "mime_types": ""
+                        },
+                        {
+                            "key": "field_5e0484d9e9adb",
+                            "label": "Видео",
+                            "name": "video",
+                            "type": "file",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5e048496e9ada",
+                                        "operator": "==",
+                                        "value": "video"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": "mp4"
                         }
                     ],
                     "min": "",
@@ -1075,5 +1135,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1577095878
+    "modified": 1577354499
 }

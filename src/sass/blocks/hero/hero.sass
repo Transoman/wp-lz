@@ -1,6 +1,8 @@
 .hero
   position: relative
   z-index: 1
+  height: 100vh
+  min-height: 74rem
   padding: 27rem 0 10rem
   color: #fff
   background:
@@ -14,6 +16,8 @@
     padding: 15rem 0 5rem
   +sm-block
     padding: 7rem 0 2rem
+    min-height: auto
+    height: auto
   &::before
     content: ''
     position: absolute
@@ -24,6 +28,17 @@
     z-index: -1
     background: linear-gradient(-270deg, rgba(20, 20, 20, 0.7) 0%, rgba(20, 20, 20, 0) 100%)
     pointer-events: none
+  &__video
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -2
+    min-width: 100%
+    min-height: 100%
+    width: 100%
+    height: auto
+    @supports (object-fit: cover)
+      object-fit: cover
   &__tag
     display: inline-block
     margin-bottom: 5rem

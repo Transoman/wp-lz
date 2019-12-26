@@ -12,7 +12,18 @@ if ( have_rows('home_layout') ):
 
     if ( get_row_layout() == 'hero' ): ?>
 
-      <section class="hero" style="background-image: url(<?php the_sub_field( 'bg' ); ?>);">
+    <?php $type_bg = get_sub_field( 'type_bg' );
+
+    if ($type_bg == 'img' && get_sub_field( 'bg' )) {
+      $bg_img = ' style="background-image: url(' . get_sub_field( 'bg' ) . ');"';
+    }
+    elseif ($type_bg == 'video' and get_sub_field( 'video' )) {
+      $bg_video = '<video class="hero__video" autoplay loop muted><source src="' . get_sub_field( 'video' ) . '" type="video/mp4"></video>';
+    }
+    ?>
+
+      <section class="hero"<?php echo $bg_img ?: ''; ?>>
+        <?php echo $bg_video ?: ''; ?>
         <div class="container">
           <div class="hero__content">
             <?php
