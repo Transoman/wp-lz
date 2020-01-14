@@ -12,15 +12,15 @@ if ( have_rows('home_layout') ):
 
     if ( get_row_layout() == 'hero' ): ?>
 
-    <?php $type_bg = get_sub_field( 'type_bg' );
+      <?php $type_bg = get_sub_field( 'type_bg' );
 
-    if ($type_bg == 'img' && get_sub_field( 'bg' )) {
-      $bg_img = ' style="background-image: url(' . get_sub_field( 'bg' ) . ');"';
-    }
-    elseif ($type_bg == 'video' and get_sub_field( 'video' )) {
-      $bg_video = '<video class="hero__video" autoplay loop muted><source src="' . get_sub_field( 'video' ) . '" type="video/mp4"></video>';
-    }
-    ?>
+      if ($type_bg == 'img' && get_sub_field( 'bg' )) {
+        $bg_img = ' style="background-image: url(' . get_sub_field( 'bg' ) . ');"';
+      }
+      elseif ($type_bg == 'video' and get_sub_field( 'video' )) {
+        $bg_video = '<video class="hero__video" autoplay loop muted><source src="' . get_sub_field( 'video' ) . '" type="video/mp4"></video>';
+      }
+      ?>
 
       <section class="hero"<?php echo $bg_img ?: ''; ?>>
         <?php echo $bg_video ?: ''; ?>
@@ -105,30 +105,36 @@ if ( have_rows('home_layout') ):
           <?php endif; ?>
 
           <?php if (have_rows( 'list' )): ?>
-            <div class="why-list row">
-                <?php while (have_rows( 'list' )): the_row(); ?>
-                  <div class="why-list__item<?php echo get_sub_field( 'minus' ) ? ' why-list__item--minus' : ''; ?>">
-                    <div class="why-list__content">
-                      <h3 class="why-list__title"><?php the_sub_field( 'title' ); ?></h3>
-                      <?php the_sub_field( 'descr' ); ?>
-                    </div>
+            <div class="why-list">
+              <?php while (have_rows( 'list' )): the_row(); ?>
+			          <?php if (have_rows( 'list_row' )): ?>
+                  <div class="why-list__row row">
+				            <?php while (have_rows( 'list_row' )): the_row(); ?>
+                      <div class="why-list__item<?php echo get_sub_field( 'minus' ) ? ' why-list__item--minus' : ''; ?>">
+                        <div class="why-list__content">
+                          <h3 class="why-list__title"><?php the_sub_field( 'title' ); ?></h3>
+                          <?php the_sub_field( 'descr' ); ?>
+                        </div>
 
-                    <?php $video = get_sub_field( 'video' );
-                    if ($video): ?>
-                      <a href="#" class="btn-play btn-hover"><span>
-                          <?php ith_the_icon( 'icon-play', 'btn-play__play' ); ?>
-                          <?php ith_the_icon( 'icon-pause', 'btn-play__pause' ); ?>
-                        </span></a>
+                        <?php $video = get_sub_field( 'video' );
+                        if ($video): ?>
+                          <a href="#" class="btn-play btn-hover"><span>
+                              <?php ith_the_icon( 'icon-play', 'btn-play__play' ); ?>
+                              <?php ith_the_icon( 'icon-pause', 'btn-play__pause' ); ?>
+                            </span></a>
 
-                      <div class="float-video why-list__video">
-                        <video>
-                          <source src="<?php echo $video; ?>" type="video/mp4">
-                        </video>
+                          <div class="float-video why-list__video">
+                            <video>
+                              <source src="<?php echo $video; ?>" type="video/mp4">
+                            </video>
+                          </div>
+                        <?php endif; ?>
+
                       </div>
-                    <?php endif; ?>
-
+                    <?php endwhile; ?>
                   </div>
-                <?php endwhile; ?>
+                <?php endif; ?>
+              <?php endwhile; ?>
               </div>
           <?php endif; ?>
 

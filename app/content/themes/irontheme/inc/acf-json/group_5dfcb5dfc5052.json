@@ -80,7 +80,7 @@
                             "new_lines": "br"
                         },
                         {
-                            "key": "field_5e048496e9ada",
+                            "key": "field_5e1dbb01b75d4",
                             "label": "Тип фона",
                             "name": "type_bg",
                             "type": "select",
@@ -114,7 +114,7 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5e048496e9ada",
+                                        "field": "field_5e1dbb01b75d4",
                                         "operator": "==",
                                         "value": "img"
                                     }
@@ -137,7 +137,7 @@
                             "mime_types": ""
                         },
                         {
-                            "key": "field_5e0484d9e9adb",
+                            "key": "field_5e1dbb31b75d5",
                             "label": "Видео",
                             "name": "video",
                             "type": "file",
@@ -146,7 +146,7 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5e048496e9ada",
+                                        "field": "field_5e1dbb01b75d4",
                                         "operator": "==",
                                         "value": "video"
                                     }
@@ -324,10 +324,10 @@
                             "button_label": "",
                             "sub_fields": [
                                 {
-                                    "key": "field_5dfcb73e50faa",
-                                    "label": "Заголовок",
-                                    "name": "title",
-                                    "type": "text",
+                                    "key": "field_5e1db58b9f134",
+                                    "label": "Ряд",
+                                    "name": "list_row",
+                                    "type": "repeater",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -336,70 +336,91 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
-                                },
-                                {
-                                    "key": "field_5dfcb74750fab",
-                                    "label": "Описание",
-                                    "name": "descr",
-                                    "type": "wysiwyg",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "tabs": "all",
-                                    "toolbar": "full",
-                                    "media_upload": 0,
-                                    "delay": 0
-                                },
-                                {
-                                    "key": "field_5dfcb75750fac",
-                                    "label": "Видео",
-                                    "name": "video_clon",
-                                    "type": "clone",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "clone": [
-                                        "field_5dfcb6be50fa4"
-                                    ],
-                                    "display": "seamless",
-                                    "layout": "block",
-                                    "prefix_label": 0,
-                                    "prefix_name": 0
-                                },
-                                {
-                                    "key": "field_5dfdc5abc867a",
-                                    "label": "Недостаток?",
-                                    "name": "minus",
-                                    "type": "true_false",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "message": "Да",
-                                    "default_value": 0,
-                                    "ui": 0,
-                                    "ui_on_text": "",
-                                    "ui_off_text": ""
+                                    "collapsed": "",
+                                    "min": 0,
+                                    "max": 2,
+                                    "layout": "table",
+                                    "button_label": "",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_5dfcb73e50faa",
+                                            "label": "Заголовок",
+                                            "name": "title",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        },
+                                        {
+                                            "key": "field_5dfcb74750fab",
+                                            "label": "Описание",
+                                            "name": "descr",
+                                            "type": "wysiwyg",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "tabs": "all",
+                                            "toolbar": "full",
+                                            "media_upload": 0,
+                                            "delay": 0
+                                        },
+                                        {
+                                            "key": "field_5dfcb75750fac",
+                                            "label": "Видео",
+                                            "name": "video_clon",
+                                            "type": "clone",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "clone": [
+                                                "field_5dfcb6be50fa4"
+                                            ],
+                                            "display": "seamless",
+                                            "layout": "block",
+                                            "prefix_label": 0,
+                                            "prefix_name": 0
+                                        },
+                                        {
+                                            "key": "field_5dfdc5abc867a",
+                                            "label": "Недостаток?",
+                                            "name": "minus",
+                                            "type": "true_false",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "Да",
+                                            "default_value": 0,
+                                            "ui": 0,
+                                            "ui_on_text": "",
+                                            "ui_off_text": ""
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -1135,5 +1156,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1577354499
+    "modified": 1579006817
 }
