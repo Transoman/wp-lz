@@ -175,7 +175,7 @@ if ( have_rows('home_layout') ):
           </div>
 
           <div class="statistics__bottom">
-            <?php echo wp_get_attachment_image( get_sub_field( 'img' ) ); ?>
+            <?php echo wp_get_attachment_image( get_sub_field( 'img' ), 'full' ); ?>
             <div class="statistics__bottom-info">
               <h3 class="statistics__bottom-title"><?php the_sub_field( 'title' ); ?></h3>
               <p class="statistics__bottom-descr"><?php the_sub_field( 'descr' ); ?></p>
@@ -246,10 +246,10 @@ if ( have_rows('home_layout') ):
                 <div class="price-list__item">
                   <p class="price-list__name"><?php the_sub_field( 'name' ); ?></p>
                   <div class="price-list__inner">
-                    <div class="price-list__row price-list__row--price" data-title="Базовая стоимость"><?php echo get_sub_field( 'base_price' ) ?: '—'; ?></div>
-                    <div class="price-list__row" data-title="Ежегодный взнос"><?php echo get_sub_field( 'fee' ) ?: '—'; ?></div>
-                    <div class="price-list__row" data-title="Питание четырехразовое"><?php echo get_sub_field( 'meals' ) ?: '—'; ?></div>
-                    <div class="price-list__row" data-title="Скидка семьям с 2-мя и более детьми"><?php echo get_sub_field( 'discount' ) ?: '—'; ?></div>
+                    <div class="price-list__row price-list__row--price" data-title="Базовая стоимость"><div><?php echo get_sub_field( 'base_price' ) ?: '—'; ?></div></div>
+                    <div class="price-list__row" data-title="Ежегодный взнос"><div><?php echo get_sub_field( 'fee' ) ?: '—'; ?></div></div>
+                    <div class="price-list__row" data-title="Питание четырехразовое"><div><?php echo get_sub_field( 'meals' ) ?: '—'; ?></div></div>
+                    <div class="price-list__row" data-title="Скидка семьям с 2-мя и более детьми"><div><?php echo get_sub_field( 'discount' ) ?: '—'; ?></div></div>
                   </div>
                 </div>
               <?php endwhile; ?>

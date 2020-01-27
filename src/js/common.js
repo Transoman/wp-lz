@@ -3,7 +3,8 @@
 global.jQuery = require('jquery');
 let svg4everybody = require('svg4everybody'),
   popup = require('jquery-popup-overlay'),
-  iMask = require('imask');
+  iMask = require('imask'),
+  matchHeight = require('jquery-match-height-browserify');
 
 jQuery(document).ready(function($) {
   // Toggle nav menu
@@ -163,6 +164,10 @@ jQuery(document).ready(function($) {
       videoPP(video, $(this));
     });
   };
+
+  $('.price-list__row:not(:first-child)').matchHeight({
+    byRow: false
+  });
 
   toggleNav();
   initModal();
