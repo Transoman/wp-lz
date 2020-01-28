@@ -74,15 +74,22 @@
     &:nth-child(2n)
       margin-right: 0
   &__name
-    margin-bottom: 1.5rem
-    font-size: 2.6rem
-    font-weight: 700
-    color: $accent
-    text-align: center
+    display: flex
+    align-items: flex-end
+    justify-content: center
+    margin-bottom: 2rem
+    font-size: 2.4rem
     +sm-block
       margin-bottom: 1rem
       font-size: 1.6rem
+    img
+      height: 4rem
+      margin-right: 1rem
+      +sm-block
+        height: 3rem
   &__inner
+    position: relative
+    z-index: 1
     background-color: #fff
     border: 2px solid #FFE6E5
     border-radius: 1.5rem
@@ -90,10 +97,26 @@
     font-size: 3.6rem
     font-weight: 600
     text-align: center
+    +trans
     +sm-block
       margin-left: 13rem
       font-size: 1.4rem
       font-weight: 900
+    &::after
+      content: ''
+      position: absolute
+      bottom: 0
+      right: 0
+      z-index: -1
+      width: 16rem
+      height: 16rem
+      background: url(images/general/half-star.svg) no-repeat center / contain
+      pointer-events: none
+      +sm-block
+        width: 7rem
+        height: 7rem
+    &:hover
+      box-shadow: 15px 15px 30px rgba(77, 46, 46, 0.15)
   &__row
     position: relative
     display: flex
@@ -117,6 +140,7 @@
       font-family: $main-font
       font-weight: 400
       text-align: left
+      color: $main-color
       +xl-block
         left: calc(-44.7rem + 14.5rem)
       +sm-block
@@ -149,13 +173,14 @@
       +lg-block
         padding-bottom: 3.5rem
     &--price
-      font-size: 4rem
+      font-size: 4.8rem
       line-height: 0.8
+      color: $red
       +sm-block
         font-size: 1.4rem
         line-height: 1.2rem
     span
-      font-size: 2.8rem
+      font-size: 3.6rem
       line-height: 1.2
       +sm-block
         font-size: 1.4rem

@@ -244,7 +244,10 @@ if ( have_rows('home_layout') ):
             <div class="price-list">
               <?php while (have_rows( 'list' )): the_row(); ?>
                 <div class="price-list__item">
-                  <p class="price-list__name"><?php the_sub_field( 'name' ); ?></p>
+                  <p class="price-list__name">
+                    <?php echo wp_get_attachment_image( get_sub_field( 'icon' ) ); ?>
+                    <span><?php the_sub_field( 'name' ); ?></span>
+                  </p>
                   <div class="price-list__inner">
                     <div class="price-list__row price-list__row--price" data-title="Базовая стоимость"><div><?php echo get_sub_field( 'base_price' ) ?: '—'; ?></div></div>
                     <div class="price-list__row" data-title="Ежегодный взнос"><div><?php echo get_sub_field( 'fee' ) ?: '—'; ?></div></div>
