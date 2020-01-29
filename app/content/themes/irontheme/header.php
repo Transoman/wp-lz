@@ -19,7 +19,7 @@
     <div class="container">
 
       <a href="<?php echo home_url( '/' ); ?>" class="logo header__logo">
-        <img src="<?php echo THEME_URL; ?>/images/general/logo.png" alt="Лига Знаний">
+        <img src="<?php echo THEME_URL; ?>/images/general/logo.svg" width="300" alt="Лига Знаний">
       </a>
 
       <nav class="nav header__nav">
