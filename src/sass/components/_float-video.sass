@@ -5,17 +5,23 @@
   z-index: 1
   width: 30rem
   height: 0
+  padding-top: 4rem
   overflow: hidden
+  border-radius: 1.5rem
+  background-color: #fff
+  opacity: 0
   +trans
   +sm-block
     width: 35.93vw
   &.play
     height: 41.5rem
+    opacity: 1
     +sm-block
       height: 51.56vw
-  video
+  &__close
     position: absolute
-    top: 0
-    left: 0
+    top: 1.5rem
+    right: 1.5rem
+  video
     width: 100%
     height: 100%

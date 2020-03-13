@@ -47,11 +47,11 @@ jQuery(document).ready(function($) {
     }
   };
 
-  $('.about-list__item, .faq-list__item').mouseenter(function () {
+  $('.faq-list__item').mouseenter(function () {
     $(this).find('.btn-play').addClass('btn-hover');
   });
 
-  $('.about-list__item, .faq-list__item').mouseleave(function () {
+  $('.faq-list__item').mouseleave(function () {
     $(this).find('.btn-play').removeClass('btn-hover');
   });
 
@@ -129,14 +129,27 @@ jQuery(document).ready(function($) {
 
   let videoPlayAbout = function() {
     let btn = $('.about-list .btn-play');
+    let btnClose = $('.about-list .float-video__close');
 
     btn.click(function(e) {
       e.preventDefault();
 
-      let video = $(this).parent().parent().find('.float-video video')[0];
+      let video = $(this).parent().parent().parent().find('.float-video video')[0];
 
       videoPP(video, $(this));
     });
+
+    btnClose.click(function (e) {
+      e.preventDefault();
+
+      $('.btn-play').removeClass('active');
+      $('.float-video video').each(function() {
+        if (!$(this)[0].paused) {
+          $(this)[0].pause();
+          $(this).parent().removeClass('play');
+        }
+      });
+    })
   };
 
   let videoPlayWhy = function() {
@@ -165,6 +178,30 @@ jQuery(document).ready(function($) {
     });
   };
 
+  let showDescr = function() {
+    let btn = $('.btn-text');
+    let btnClose = $('.float-descr__close');
+
+    btn.click(function(e) {
+      e.preventDefault();
+
+      if ($(this).next('.float-descr').is(':visible')) {
+        return;
+      }
+
+      btn.removeClass('active');
+      $('.float-descr').fadeOut();
+      $(this).next('.float-descr').fadeIn();
+      $(this).addClass('active');
+    });
+
+    btnClose.click(function (e) {
+      e.preventDefault();
+      $(this).parent().fadeOut();
+      btn.removeClass('active');
+    });
+  };
+
   $('.price-list__row:not(:first-child)').matchHeight({
     byRow: false
   });
@@ -175,6 +212,7 @@ jQuery(document).ready(function($) {
   videoPlayAbout();
   videoPlayWhy();
   videoPlayFaq();
+  showDescr();
 
   // SVG
   svg4everybody({});

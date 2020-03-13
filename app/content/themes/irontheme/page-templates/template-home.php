@@ -68,17 +68,38 @@ if ( have_rows('home_layout') ):
                   <h3 class="about-list__title">
                     <?php the_sub_field( 'title' ); ?>
 
-                    <?php $video = get_sub_field( 'video' );
-                    if ($video): ?>
-                      <a href="#" class="btn-play"><span>
-                          <?php ith_the_icon( 'icon-play', 'btn-play__play' ); ?>
-                          <?php ith_the_icon( 'icon-pause', 'btn-play__pause' ); ?>
-                        </span></a>
+                    <?php
+                      $video = get_sub_field( 'video' );
+	                    $descr = get_sub_field( 'descr' );
+
+	                    if ($video || $descr['title']):
+                      ?>
+                      <div class="btn-group">
+                        <?php if ($video): ?>
+                          <a href="#" class="btn-play"><span>
+                              <?php ith_the_icon( 'icon-play', 'btn-play__play' ); ?>
+                              <?php ith_the_icon( 'icon-pause', 'btn-play__pause' ); ?>
+                            </span></a>
+                        <?php endif; ?>
+
+                        <?php if ($descr['title']): ?>
+                          <a href="#" class="btn-text"><span>
+                                <?php ith_the_icon( 'text', 'btn-text__icon' ); ?>
+                              </span></a>
+
+                          <div class="float-descr">
+                            <button type="button" class="float-descr__close btn-close"><?php ith_the_icon( 'close' ); ?></button>
+                            <h4 class="float-descr__title"><?php echo $descr['title']; ?></h4>
+                            <?php echo $descr['text'] ?: ''; ?>
+                          </div>
+                        <?php endif; ?>
+                      </div>
                     <?php endif; ?>
                   </h3>
 
                   <?php if ($video): ?>
                     <div class="float-video about-list__video">
+                      <button type="button" class="float-video__close btn-close"><?php ith_the_icon( 'close' ); ?></button>
                       <video>
                         <source src="<?php echo $video; ?>" type="video/mp4">
                       </video>

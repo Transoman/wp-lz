@@ -1,0 +1,38 @@
+.float-descr
+  position: absolute
+  bottom: 1.5rem
+  left: 1.5rem
+  width: 60rem
+  padding: 4rem 5rem 5rem
+  background-color: #fff
+  box-shadow: 0 0 30px rgba(30, 30, 30, 0.15)
+  border-radius: 1.5rem
+  display: none
+  z-index: 1
+  +lg-block
+    width: 35rem
+  +md-block
+    left: auto
+    right: 1.5rem
+  +sm-block
+    width: 27rem
+    padding: 2rem 2.6rem
+  &__close
+    position: absolute
+    top: 2rem
+    right: 2rem
+    z-index: 1
+    +sm-block
+      top: 1.5rem
+      right: 1.5rem
+  &__title
+    margin-bottom: 1rem
+    +sm-block
+      font-size: 1.8rem
+  p
+    font-size: 1.6rem
+    font-weight: 400
+    +sm-block
+      font-size: 1.4rem
+    &:last-child
+      margin-bottom: 0

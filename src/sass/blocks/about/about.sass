@@ -35,14 +35,20 @@
     +sm-block
       flex-grow: 1
       padding-right: 8rem
-  .btn-play
+  .btn-group
     position: absolute
     top: 50%
     left: calc(100% + 5.5rem)
     transform: translateY(-50%)
+    display: flex
+    flex-direction: column
     +sm-block
       left: auto
-      right: 1rem
+      right: 0
     &.active
       +sm-block
         right: 23vw
+    a:not(:last-of-type)
+      margin-bottom: 4rem
+      +sm-block
+        margin-bottom: 2.5rem
