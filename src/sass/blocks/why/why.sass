@@ -35,7 +35,6 @@
     +size(7)
     +size-md(14)
     position: relative
-    z-index: 1
     margin-bottom: 3rem
     padding: 3rem 4rem 2.5rem
     border-radius: 1.5rem
@@ -62,11 +61,19 @@
         width: 10rem
         height: 10rem
         opacity: 0.1
+    &:nth-child(even)
+      .float-descr
+        left: auto
+        right: 7rem
+        +sm-block
+          right: 3rem
     &:hover
       box-shadow: 0 0 30px rgba(30, 30, 30, 0.15)
-      .btn-play.btn-hover
+      .btn-group
         opacity: 1
         visibility: visible
+    .float-video
+      background-color: #F0FFF2
     &--minus
       background-color: #FFF5F5
       &::after
@@ -74,63 +81,77 @@
         opacity: 0.1
         +sm-block
           opacity: 0.05
+      .float-video
+        background-color: #FFF5F5
       .why-list
         &__title
           &::before
             background-image: url(images/general/minus.svg)
     &--video-play
+      box-shadow: 0 0 30px rgba(30, 30, 30, 0.15)
+      .btn-group
+        opacity: 1 !important
+        visibility: visible !important
       .why-list
         &__content
           +from(768px)
             max-width: 32rem
+    &.active
+      box-shadow: 0 0 30px rgba(30, 30, 30, 0.15)
+      .btn-group
+        opacity: 1 !important
+        visibility: visible !important
     p
       margin-bottom: 1rem
       color: rgba($main-color, 0.8)
       &:last-child
         margin-bottom: 0
-    .btn-play.btn-hover
+    .btn-group
       position: absolute
       bottom: 5.5rem
-      right: 5.5rem
+      right: 0
+      padding-right: 5.5rem
       z-index: 2
-      width: 7rem
-      height: 7rem
+      display: flex
+      flex-direction: column
       opacity: 0
       visibility: hidden
+      +trans
+      +md-block
+        padding-right: 2rem
       +sm-block
-        right: 0
-        bottom: 3.5rem
-        width: 4.7rem
-        height: 4.7rem
+        bottom: 2.5rem
         opacity: 1
         visibility: visible
-      &::before
-        width: 15rem
-        height: 15rem
-        margin-top: -7.5rem
-        margin-left: -7.5rem
+      a:not(:last-of-type)
+        margin-bottom: 4rem
         +sm-block
-          display: block
-          width: 10rem
-          height: 10rem
-          margin-top: -5rem
-          margin-left: -5rem
-          opacity: 1
-      svg
-        width: 2.4rem
-        height: 2.7rem
-        +sm-block
-          width: 1.6rem
-          height: 1.8rem
-      span
-        &::before, &::after
-          opacity: 0
+          margin-bottom: 2.5rem
+    .btn-play
+      right: 0
+      +trans
       &.active
         right: 23rem
+        bottom: -4rem
+        z-index: 3
         opacity: 1
         visibility: visible
+        transform: scale(2.2)
         +sm-block
           right: 30vw
+    .float-video
+      bottom: -5.5rem
+      box-shadow: 0 0 30px rgba(30, 30, 30, 0.15)
+      +sm-block
+        bottom: -2.5rem
+      &.play
+        z-index: 2
+    .float-descr
+      +md-block
+        right: 3.5rem
+      +sm-block
+        width: 25rem
+        right: 3rem
   &__content
     +sm-block
       max-width: 19rem

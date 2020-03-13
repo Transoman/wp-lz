@@ -457,6 +457,61 @@
                                             "prefix_name": 0
                                         },
                                         {
+                                            "key": "field_5e6b77e2ab7cb",
+                                            "label": "Дополнительное описание",
+                                            "name": "add_descr",
+                                            "type": "group",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "layout": "block",
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_5e6b7910199ea",
+                                                    "label": "Заголовок",
+                                                    "name": "title",
+                                                    "type": "text",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": "",
+                                                    "prepend": "",
+                                                    "append": "",
+                                                    "maxlength": ""
+                                                },
+                                                {
+                                                    "key": "field_5e6b7918199eb",
+                                                    "label": "Текст",
+                                                    "name": "text",
+                                                    "type": "textarea",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "default_value": "",
+                                                    "placeholder": "",
+                                                    "maxlength": "",
+                                                    "rows": "",
+                                                    "new_lines": "wpautop"
+                                                }
+                                            ]
+                                        },
+                                        {
                                             "key": "field_5dfdc5abc867a",
                                             "label": "Недостаток?",
                                             "name": "minus",
@@ -1235,5 +1290,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1584094881
+    "modified": 1584101672
 }

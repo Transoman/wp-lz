@@ -129,7 +129,6 @@ jQuery(document).ready(function($) {
 
   let videoPlayAbout = function() {
     let btn = $('.about-list .btn-play');
-    let btnClose = $('.about-list .float-video__close');
 
     btn.click(function(e) {
       e.preventDefault();
@@ -138,6 +137,10 @@ jQuery(document).ready(function($) {
 
       videoPP(video, $(this));
     });
+  };
+
+  let closeVideo = function() {
+    let btnClose = $('.float-video__close');
 
     btnClose.click(function (e) {
       e.preventDefault();
@@ -154,15 +157,24 @@ jQuery(document).ready(function($) {
 
   let videoPlayWhy = function() {
     let btn = $('.why-list .btn-play');
+    let btnClose = $('.why-list .float-video__close');
 
     btn.click(function(e) {
       e.preventDefault();
 
-      $(this).parent().toggleClass('why-list__item--video-play');
+      $(this).parent().parent().toggleClass('why-list__item--video-play');
 
       let video = $(this).parent().find('.float-video video')[0];
 
       videoPP(video, $(this));
+
+      video.addEventListener('ended', function () {
+        btn.parent().parent().removeClass('why-list__item--video-play');
+      }, false);
+    });
+
+    btnClose.click(function () {
+      btn.parent().parent().removeClass('why-list__item--video-play');
     });
   };
 
@@ -202,6 +214,20 @@ jQuery(document).ready(function($) {
     });
   };
 
+  let showDescrWhy = function() {
+    let btn = $('.btn-text');
+    let btnClose = $('.float-descr__close');
+
+    btn.click(function() {
+      $('.why-list__item').removeClass('active');
+      $(this).parent().parent().addClass('active');
+    });
+
+    btnClose.click(function() {
+      $('.why-list__item').removeClass('active');
+    });
+  };
+
   $('.price-list__row:not(:first-child)').matchHeight({
     byRow: false
   });
@@ -213,6 +239,8 @@ jQuery(document).ready(function($) {
   videoPlayWhy();
   videoPlayFaq();
   showDescr();
+  showDescrWhy();
+  closeVideo();
 
   // SVG
   svg4everybody({});
