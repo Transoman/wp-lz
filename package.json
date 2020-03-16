@@ -41,6 +41,7 @@
     "jquery-match-height-browserify": "^0.7.0",
     "jquery-popup-overlay": "^2.1.4",
     "normalize.css": "^8.0.1",
+    "simplebar": "^5.1.0",
     "svg4everybody": "^2.1.9"
   },
   "browserslist": [

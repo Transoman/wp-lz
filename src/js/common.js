@@ -4,7 +4,8 @@ global.jQuery = require('jquery');
 let svg4everybody = require('svg4everybody'),
   popup = require('jquery-popup-overlay'),
   iMask = require('imask'),
-  matchHeight = require('jquery-match-height-browserify');
+  matchHeight = require('jquery-match-height-browserify'),
+  SimpleBar = require('simplebar');
 
 jQuery(document).ready(function($) {
   // Toggle nav menu
@@ -47,14 +48,6 @@ jQuery(document).ready(function($) {
     }
   };
 
-  $('.faq-list__item').mouseenter(function () {
-    $(this).find('.btn-play').addClass('btn-hover');
-  });
-
-  $('.faq-list__item').mouseleave(function () {
-    $(this).find('.btn-play').removeClass('btn-hover');
-  });
-
   $('a[href*="#"]')
   // Remove links that don't actually link to anything
     .not('[href="#"]')
@@ -92,17 +85,27 @@ jQuery(document).ready(function($) {
   let videoPP = function(video, btn) {
     if (video) {
 
+      let target = $(video).parent();
+
+      setTimeout(function() {
+        $('body, html').animate({
+          scrollTop: target.offset().top - 20
+        }, 1000);
+      }, 200);
+
       if (video.paused) {
         $('.btn-play').removeClass('active');
         $('.float-video video').each(function() {
           if (!$(this)[0].paused) {
             $(this)[0].pause();
             $(this).parent().removeClass('play');
+            $(this).parent().fadeOut();
           }
         });
 
         video.play();
         $(video).parent().addClass('play');
+        $(video).parent().fadeIn();
         btn.addClass('active');
       } else {
         $('.btn-play').removeClass('active');
@@ -110,11 +113,13 @@ jQuery(document).ready(function($) {
           if (!$(this)[0].paused) {
             $(this)[0].pause();
             $(this).parent().removeClass('play');
+            $(this).parent().fadeOut();
           }
         });
 
         video.pause();
         $(video).parent().removeClass('play');
+        $(video).parent().fadeOut();
         btn.removeClass('active');
       }
 
@@ -122,6 +127,7 @@ jQuery(document).ready(function($) {
         $('.btn-play').removeClass('active');
         $('.float-video video').each(function() {
           $(this).parent().removeClass('play');
+          $(this).parent().fadeOut();
         });
       }, false);
     }
@@ -133,7 +139,7 @@ jQuery(document).ready(function($) {
     btn.click(function(e) {
       e.preventDefault();
 
-      let video = $(this).parent().parent().parent().find('.float-video video')[0];
+      let video = $(this).parent().find('.float-video video')[0];
 
       videoPP(video, $(this));
     });
@@ -150,6 +156,7 @@ jQuery(document).ready(function($) {
         if (!$(this)[0].paused) {
           $(this)[0].pause();
           $(this).parent().removeClass('play');
+          $(this).parent().fadeOut();
         }
       });
     })
@@ -198,6 +205,8 @@ jQuery(document).ready(function($) {
       e.preventDefault();
 
       if ($(this).next('.float-descr').is(':visible')) {
+        btn.removeClass('active');
+        $('.float-descr').fadeOut();
         return;
       }
 
@@ -205,6 +214,15 @@ jQuery(document).ready(function($) {
       $('.float-descr').fadeOut();
       $(this).next('.float-descr').fadeIn();
       $(this).addClass('active');
+
+      let target = $(this).next('.float-descr');
+
+      setTimeout(function() {
+        $('body, html').animate({
+          scrollTop: target.offset().top - 20
+        }, 1000);
+      }, 200);
+
     });
 
     btnClose.click(function (e) {

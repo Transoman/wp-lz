@@ -1,6 +1,9 @@
 .about
   z-index: 1
   background-color: #FFF5F5
+  .container
+    position: relative
+    z-index: 1
   .section-title
     +sm-block
       margin-bottom: 1rem
@@ -44,10 +47,7 @@
     flex-direction: column
     +sm-block
       left: auto
-      right: 0
-    &.active
-      +sm-block
-        right: 23vw
+      right: 2rem
     a:not(:last-of-type)
       margin-bottom: 4rem
       +sm-block

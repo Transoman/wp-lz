@@ -173,3 +173,13 @@ button
     +sm-block
       width: 1.2rem
       height: 1.2rem
+
+.btn-text
+  &__close
+    display: none
+  &.active
+    .btn-text
+      &__close
+        display: inline
+      &__icon
+        display: none
